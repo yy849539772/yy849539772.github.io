@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="在JSP中一共预先定义了9个这样的对象，分别为request、response、session、application、out、pageContext、config、page和exception。
+,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十一月 20, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>在JSP中一共预先定义了9个这样的对象，分别为request、response、session、application、out、pageContext、config、page和exception。</p>
+<p>1、request对象<br>request对象封装了由客户端生成的HTTP请求的所有细节，主要包括HTTP头信息、系统信息、请求方式和请求参数等。通过request对象提供的相应方法可以处理客户端浏览器提交的HTTP请求中的各项参数。</p>
+<p>request对象的常用方法：</p>
+<p>1.1 访问请求参数<br>我们知道request对象用于处理HTTP请求中的各项参数。在这些参数中，最常用的就是获取访问请求参数。当我们通过超链接的形式发送请求时，可以为该请求传递参数，这可以通过在超链接的后面加上问号“?”来实现。注意这个问号为英文半角的符号。</p>
+<p>如果要同时指定多个参数，各参数间使用与符号“&amp;”分隔即可。</p>
+<p>示例：在页面中定义超链接。</p>
+<p><a href="delete.jsp?id=1">删除</a><br>在delete.jsp页面中，可以通过request对象的getParameter()方法获取传递的参数值。</p>
+<p>&lt;%<br>    String id = request.getParameter(“id”);  //获取id参数的值<br>%&gt;<br>示例：编程学员注册功能。要求提交注册信息后，显示学员输入的数据。</p>
+<p>（1）注册页面 reginput.jsp。</p>
+<p>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8” pageEncoding=”UTF-8”%&gt;</p>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <title>学员注册</title>
+    <meta name="author" content="我的博客">
+    <style>
+        .txtBox{
+            padding: 3px;
+            width: 300px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div align="center">请输入注册信息
+    <form name="form1" method="post" action="reginfo.jsp">
+        <table border="0" align="center">
+            <tr>
+                <td>用户姓名：</td>
+                <td><input type="text" name="name" value="我的博客" class="txtBox"></td>
+            </tr>
+            <tr>
+                <td>博客地址：</td>
+                <td><input type="text" name="blog" value class="txtBox"></td>
+            </tr>
+            <tr>
+                <td>备注信息：</td>
+                <td><input type="text" name="remark" value="您好，欢迎访问 我的博客！" class="txtBox"></td>
+            </tr>
+            <tr>
+                <td>兴趣爱好：</td>
+                <td>
+                    <input type="checkbox" name="interests" value="足球">足球
+                    <input type="checkbox" name="interests" value="篮球">篮球
+                    <input type="checkbox" name="interests" value="羽毛球">羽毛球
+                    <input type="checkbox" name="interests" value="乒乓球">乒乓球
+                </td>
+            </tr>
+            <!-- 以下是提交、取消按钮 -->
+            <tr>
+                <td>
+                    <input type="submit" value="提交">
+                </td>
+                <td>
+                    <input type="reset" value="取消">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
+（2）注册提交页面 reginfo.jsp。
+
+
+<p>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8” pageEncoding=”UTF-8”%&gt;<br>&lt;%<br>    request.setCharacterEncoding(“UTF-8”);          //设置请求编码<br>    String name = request.getParameter(“name”);     //获取用户名<br>    String blog = request.getParameter(“blog”);     //获取博客地址<br>    String remark = request.getParameter(“remark”); //获取备注信息<br>    //获取兴趣爱好<br>    String[] interests = request.getParameterValues(“interests”);<br>    String interStr = “”;<br>    if(interests != null)<br>    {<br>        for(String item : interests)<br>        {<br>            interStr += item + “;”;<br>        }<br>    }<br>%&gt;</p>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <title>注册信息</title>
+    <meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+用户姓名：<%= name %><br>
+博客地址：<%= blog %><br>
+备注信息：<%= remark %><br>
+兴趣爱好：<%= interstr %>
+</%=></%=></%=></%=></body>
+</html>
+执行结果：
+
+<p>（1）注册页面 reginput.jsp</p>
+<p>（2）注册提交页面 reginfo.jsp</p>
+<p>1.2 在作用域中管理属性<br>在进行请求转发时，需要把一些数据传递到转发后的页面进行处理。这时，就需要使用request对象的setAttribute()方法将数据保存到request范围内的变量中。request对象的setAttribute()方法的语法格式如下：</p>
+<p>request.setAttribute(String name,Object object);<br>在将数据保存到request范围内的变量中后，可以通过request对象的getAttribute()方法获取该变量的值，具体的语法格式如下：</p>
+<p>request.getAttribute(String name)<br>1.3 获取cookie<br>cookie的中文意思是小甜饼，然而在互联网上的意思与这就完全不同了。它和食品完全没有关系。在互联网中，cookie是小段的文本信息，在网络服务器上生成，并发送给浏览器的。通过使用cookie可以标识用户身份，记录用户名和密码，跟踪重复用户等。浏览器将cookie以key/value的形式保存到客户机的某个指定目录中。</p>
+<p>通过cookie的getCookies()方法即可获取到所有cookie对象的集合；通过cookie对象的getName()方法可以获取到指定名称的cookie；通过getValue()方法即可获取到cookie对象的值。另外将一个cookie对象发送到客户端使用了response对象的addCookie()方法。</p>
+<p>示例：通过cookie保存用户信息。</p>
+<p>（1）写入cookie对象页面 index.jsp。</p>
+<p>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8” pageEncoding=”UTF-8”%&gt;<br><!DOCTYPE html></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <title>写入cookie对象</title>
+  <meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+<% 写入cookie对象 request.setcharacterencoding("utf-8"); 设置请求的编码 cookie cookie("usercookie","您好，欢迎访问pan_junbiao的博客！"); 创建并实例化cookie对象 cookie.setmaxage(60*60*24*30); 设置cookie有效期为30天 response.addcookie(cookie); 保存cookie对象 %>
+
+<script type="text/javascript">window.location.href="deal.jsp"</script>
+</%></body>
+</html>
+
+
+<p>（2）读取cookie值页面 deal.jsp。</p>
+<p>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8” pageEncoding=”UTF-8”%&gt;<br><!DOCTYPE html></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <title>读取cookie值</title>
+    <meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+<% 读取cookie值 cookie[] cookies="request.getCookies();" 从request中获取cookie对象的集合 string user ; if(cookies !="null)" { 遍历cookie对象集合 for(cookie cookieitem : cookies) if(cookieitem.getname().equals("usercookie")) 读取cookie对象的的值 } %>
+
+<h3>读取cookie值:</h3>
+用户信息：<%= user %>
+</%=></%></body>
+</html>
+执行结果：
+
+
+
+<p>1.4 解决中文乱码<br>在上面的代码中我们为id参数传递了一个字符串类型的值“001”，如果将这个参数的值更改为中文，则在show.jsp就会发生大家都不愿意看到的问题——在显示参数值时中文内容变成了乱码。这是因为请求参数的文字编码方式与页面中的不一致所造成的，所有的request请求都是iso-8859-1的，而在此页面采用的是UTF-8的编码方式。要解决此问题，只要将获取到的数据通过String的构造方法使用指定的编码类型重新构造一个String对象即可正确地显示出中文信息。</p>
+<body>
+    <a href="deal.jsp?name=张三&sex=男">解决中文乱码</a>
+</body>
+<body>
+    name参数的值为：<%=new string(request.getparameter("name").getbytes("iso-8859-1"),"utf-8") %><br>
+    sex参数的值为：<%=request.getparameter("sex") %>
+</%=request.getparameter("sex")></%=new></body>
+1.5 获取客户端信息
+通过request对象可以获取客户端的相关信息，如HTTP报头信息，客户信息提交方式、客户端主机IP地址、端口号等。
+
+<p>request获取客户端信息的常用方法：</p>
+<p>示例：使用request对象的相关方法获取客户端信息。</p>
+<p>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8” pageEncoding=”UTF-8”%&gt;<br><!DOCTYPE html></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+  <title>使用request对象的相关方法获取客户端信息</title>
+  <meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+客户提交信息的方式：<%=request.getmethod()%>
+<br>使用的协议：<%=request.getprotocol()%>
+<br>获取发出请求字符串的客户端地址：<%=request.getrequesturi()%>
+<br>获取发出请求字符串的客户端地址：<%=request.getrequesturl()%>
+<br>获取提交数据的客户端IP地址：<%=request.getremoteaddr()%>
+<br>获取服务器端口号：<%=request.getserverport()%>
+<br>获取服务器的名称：<%=request.getservername()%>
+<br>获取客户端的主机名：<%=request.getremotehost()%>
+<br>获取客户端所请求的脚本文件的文件路径:<%=request.getservletpath()%>
+<br>获得Http协议定义的文件头信息Host的值:<%=request.getheader("host")%>
+<br>获得Http协议定义的文件头信息User-Agent的值:<%=request.getheader("user-agent")%>
+<br>获得Http协议定义的文件头信息accept-language的值:<%=request.getheader("accept-language")%>
+<br>获得请求文件的绝对路径:<%=request.getrealpath("index.jsp")%>
+</%=request.getrealpath("index.jsp")%></%=request.getheader("accept-language")%></%=request.getheader("user-agent")%></%=request.getheader("host")%></%=request.getservletpath()%></%=request.getremotehost()%></%=request.getservername()%></%=request.getserverport()%></%=request.getremoteaddr()%></%=request.getrequesturl()%></%=request.getrequesturi()%></%=request.getprotocol()%></%=request.getmethod()%></body>
+</html>
+执行结果：
+
+
+
+<p>1.6 显示国际化信息<br>浏览器可以通过accept-language的HTTP报头向Web服务器指明它所使用的本地语言。request对象中的getLocale()和getLocales()方法允许JSP开发人员获取这一信息，获取的信息属于java.util.Local类型。java.util.Local类型的对象封装了一个国家和一种国家所使用的语言。使用这一信息，JSP开发者就可以使用语言所特有的信息作出响应。</p>
+<p>示例：页面信息国际化。</p>
+<p>&lt;%<br>    java.util.Locale locale = request.getLocale();<br>    String str = “”;<br>    if(locale.equals(java.util.Locale.US))<br>    {<br>        str = “Hello, Welcome to pan_junbiao’s blog!”;<br>    }<br>    else if(locale.equals(java.util.Locale.CHINA))<br>    {<br>        str = “您好，欢迎访问 pan_junbiao的博客！”;<br>    }<br>%&gt;</p>
+<p>&lt;%= str %&gt;</p>
+<p>2、response对象<br>response对象用于响应客户请求，向客户端输出信息。它封装了JSP产生的响应，并发送到客户端以响应客户端的请求。请求的数据可以是各种数据类型，甚至是文件。response对象在JSP页面内有效。</p>
+<p>request对象的常用方法：</p>
+<p>方法    说明<br>sendRedirect(String path)    将网页重定向到另一个页面。<br>setHeader(String name, String value)    设置HTTP响应报头信息。<br>2.1 重定向网页<br>使用response对象提供的sendRedirect()方法可以将网页重定向到另一个页面。重定向操作支持将地址重定向到不同的主机上，这一点与转发不同。在客户端浏览器上将会得到跳转的地址，并重新发送请求链接。用户可以从浏览器的地址栏中看到跳转后的地址。进行重定向操作后，request中的属性全部失效，并且开始一个新的request对象。sendRedirect()方法的语法格式如下：</p>
+<p>response.sendRedirect(String path);<br>参数说明：</p>
+<p>path：用于指定目标路径，可以是相对路径，也可以是不同主机的其他URL地址。</p>
+<p>示例：使用response对象提供的sendRedirect()方法重定向到登录页面。</p>
+<p>&lt;%<br>    response.sendRedirect(“login.jsp”);  //重定向到登录页面<br>%&gt;<br>2.2 处理HTTP文件头<br>通过response对象可以设置HTTP响应报头，其中，最常用的是禁用缓存、设置页面自动刷新和定时跳转网页。下面分别进行介绍。</p>
+<p>设置HTTP响应报头方法的语法格式如下：</p>
+<p>response.setHeader(String name, String value);<br>2.2.1 禁用缓存<br>在默认情况下，浏览器将会对显示的网页内容进行缓存，这样可以提高网页的显示速度。对于一些安全性要求比较高的网站，通常需要禁用缓存。</p>
+<p>示例：通过设置HTTP头的方式实现禁用缓存。</p>
+<p>&lt;%<br>    response.setHeader(“Cache-Control”, “no-store”);<br>    response.setDateHeader(“Expires”, 0);<br>%&gt;<br>2.2.2 设置页面自动刷新<br>通过设置HTTP头还可以实现页面的自动刷新。</p>
+<p>示例：使页面每隔10秒自动刷新一次。</p>
+<p>&lt;%<br>    response.setHeader(“refresh”, “10”);<br>%&gt;<br>2.2.3 定时跳转网页<br>通过设置HTTP头还可以实现定时跳转页面功能。</p>
+<p>示例：使页面5秒后自动跳转到指定的网页。</p>
+<p>&lt;%<br>    response.setHeader(“refresh”, “5;URL=login.jsp”);<br>%&gt;<br>2.3 设置输出缓冲<br>通常情况下，服务器要输出到客户端的内容不会直接写到客户端，而是先写到一个输出缓冲区，在计算机术语中，缓冲区被定义为暂时放置输入或输出资料的内存。实际上，缓冲区也可以这样理解：在一个粮库中，由于装缷车队的速度要快于传送带的传输速度，为了不造成装缷车队的浪费，粮库设计了一个站台，装缷车队可以先将运送的粮食缷到这个平台上，然后让传送机慢慢传送。粮库的这个站台就起到了缓冲的作用。</p>
+<p>response对象提供的对缓冲区进行配置的方法：</p>
+<p>方法    说明<br>flushBuffer()    强制将缓冲区的内容输出到客户端。<br>getBufferSize()    获取响应所使用的缓冲区的实际大小，如果没有使用缓冲区，则返回0。<br>setBufferSize(int size)    设置缓冲区大小。<br>reset()    清除缓冲区的内容，同时清除状态码和报头。<br>isCommitted()    检查服务器端是否已经把数据写入到可客户端。<br>示例：设置缓冲区的大小为32KB。</p>
+<p>&lt;%<br>    response.setBufferSize(32);<br>%&gt;<br>说明：如果将缓冲区的大小设置为0KB，则表示不缓冲。</p>
+<p>3、session对象<br>session在网络中被称为会话。由于HTTP协议是一种无状态协议，也就是当一个客户向服务器发出请求，服务器接收请求，并返回响应后，该连接就结束了，而服务器并不保存相关的信息。为了弥补这一缺点，HTTP协议提供了session。通过session可以在应用程序的Web页面间进行跳转时，保存用户的状态，使整个用户会话一直存在下去，直到关闭浏览器。但是，如果在一个会话中，客户端长时间不向服务器发出请求，session对象就会自动消失。这个时间取决于服务器，例如，Tomcat服务器默认为30分钟。不过这个时间可以通过编写程序进行修改。</p>
+<p>session对象的常用方法：</p>
+<p>示例：保存与获取session对象信息。</p>
+<p>&lt;%<br>    session.setAttribute(“UserName”, “pan_junbiao的博客”);           //保存session对象<br>    String userName = session.getAttribute(“UserName”).toString();  //获取session对象<br>%&gt;<br>配置web.xml文件：</p>
+<p>如果使用的是Tomcat，可以向下面这样配置web.xml文件：</p>
+<session-config>
+    <session-timeout>15</session-timeout>
+</session-config>
+ 超时以分钟为单位，Tomcat中的默认的超时时间是30分钟。
+
+<p>Servlet中的getMaxInactiveInterval( ) 方法以秒为单位返回超时时间。如果在web.xml中配置的是15分钟，则getMaxInactiveInterval( ) 方法将会返回900。</p>
+<p>4、application对象<br>application对象用于保存所有应用中的共有数据。它在服务器启动时自动创建，在服务器停止时销毁。当application对象没有被销毁时，所有用户都可以共享该application对象。与session对象相比，application对象的生命周期更长，类似于系统的“全局变量”。</p>
+<p>application对象的常用方法：</p>
+<p>方法    说明<br>String getInitParameter(String name)    获取已命名的应用程序初始化参数值。<br>Enumeration<string> getInitParameterNames()    获取所有已定义的应用程序初始化参数名的枚举。<br>Enumeration<string> getAttributeNames()    获取所有application对象使用的属性名。<br>Object getAttribute(String name)    从application对象中获取指定对象名。<br>void setAttribute(String key,Object obj)    使用指定名称和指定对象在application对象中进行关联。<br>void removeAttribute(String name)    从application对象中去掉指定名称的属性。<br>4.1 访问应用程序初始化参数<br>application对象提供了对应用程序初始化参数进行访问的方法。应用程序初始化参数在web.xml文件中进行设置，web.xml文件位于Web应用所在目录下的WEB-INF子目录中。在web.xml文件中通过<context-param>标记配置应用程序初始化参数。</context-param></string></string></p>
+<p>示例：在web.xml文件中配置连接MySQL数据库所需的url参数。</p>
+  <context-param>
+      <param-name>url</param-name>
+      <param-value>jdbc:mysql://127.0.0.1:3306/db_database</param-value>
+  </context-param>
+
+application对象提供了两种访问应用程序初始化参数的方法。
+
+<p>4.1.1 getInitParameter(String name)方法<br>String getInitParameter(String name)方法用于获取已命名的应用程序初始化参数值。</p>
+<p>示例：获取上面web.xml文件中配置的url参数的值。</p>
+<p>&lt;%<br>    String url = application.getInitParameter(“url”);<br>%&gt;<br>4.1.2 getInitParameterNames()方法<br>Enumeration<string> getInitParameterNames()方法获取所有已定义的应用程序初始化参数名的枚举。</string></p>
+<p>示例：使用getInitParameterNames()方法获取web.xml文件中定义的全部应用程序初始化参数，并通过循环输出。</p>
+<p>&lt;%@ page import=”java.util.*” %&gt;<br>&lt;%<br>    Enumeration<string> enume = application.getInitParameterNames();   //获取全部初始化参数<br>    while(enume.hasMoreElements())<br>    {<br>        String name = enume.nextElement();                  //获取参数名<br>        String value = application.getInitParameter(name);  //获取参数值<br>        out.println(name + “：”);  //输出参数名<br>        out.println(value);        //输出参数值<br>    }<br>%&gt;<br>4.2 管理应用程序环境属性<br>与session对象相同，也可以在application对象中设置属性。与session对象不同的是，session只是在当前客户的会话范围内有效，当超过保存时间，session对象就被收回；而application对象在整个应用区域中都有效。</string></p>
+<p>&lt;%<br>    application.setAttribute(“UserName”, “pan_junbiao的博客”);           //保存application对象<br>    String userName = application.getAttribute(“UserName”).toString();  //获取application对象<br>%&gt;</p>
+<p>5、out对象<br>out对象用于在Web浏览器内输出信息，并且管理应用服务器上的输出缓冲区。在使用out对象输出数据时，可以对数据缓冲区进行操作，及时清除缓冲区中的残余数据，为其他的输出让出缓冲空间。待数据输出完毕后，要及时关闭输出流。</p>
+<p>5.1 向客户端输出数据<br>out对象一个最基本的应用就是向客户端浏览器输出信息。out对象可以输出各种数据类型的数据，在输出非字符串类型的数据时，会自动转换为字符串进行输出。out对象提供了print()和println()两种向页面中输出信息的方法。</p>
+<p>5.1.1 print()方法<br>示例：通过两种方式向客户端浏览器输出文字。</p>
+<p>&lt;%<br>    out.print(“您好，pan_junbiao的博客”);<br>%&gt;</p>
+<p>&lt;%= “您好，pan_junbiao的博客” %&gt;<br>5.1.2 println()方法<br>println()方法也可以用于向客户端浏览器输出信息，该方法输出内容后，还输出一个换行符。</p>
+<p>示例：使用println()方法向客户端浏览器输出文字。</p>
+<pre>
+<% out.println("<b>使用println()方法向客户端浏览器输出文字：");
+    out.println("您好！");
+    out.println("欢迎访问 pan_junbiao的博客");
+    out.println("博客地址：https://blog.csdn.net/pan_junbiao");
+%>
+</%></pre>
+<p>说明：使用println()方法输出内容要有换行的效果，需要同时使用HTML的<pre>标记括起来，否则无法显示换行效果。</pre></p>
+<p>执行效果：</p>
+<p>5.2 管理响应缓冲<br>out对象的另一个比较重要的功能就是对缓冲区进行管理。通过调用out对象的clear()方法可以清除缓冲区的内容。这类似于重置响应流，以便重新开始操作。如果响应已经提交，则会有产生IOException异常的负作用。out对象还提供了另一种清除缓冲区内容的方法，那就是clearBuffer()方法，通过该方法可以清除缓冲区的“当前”内容，而且即使内容已经提交给客户端，也能够访问该方法。除了这两个方法外，out对象还提供了其他用于管理缓冲区的方法。</p>
+<p>out对象用于管理缓冲区的方法如下：</p>
+<p>方法    说明<br>clear()    清除缓冲区中的内容。<br>clearBuffer()    清除当前缓冲区中的内容。<br>flush()    刷新流。<br>isAutoFlush()    检测当前缓冲区已满时是自动清空，还是抛出异常。<br>getBufferSize()    获取缓冲区的大小。</p>
+<p>6、获取会话范围的pageContext对象<br>获取页面上下文的pageContext对象是一个比较特殊的对象，通过它可以获取JSP页面的request、response、session、out、exception等对象。pageContext对象的创建和初始化都是由容器来完成的，JSP页面中可以直接使用pageContext对象。</p>
+<p>pageContext对象的常用方法：</p>
+<p>方法    说明<br>forward(String relativeUrlPath)<br>把页面转发给另一个页面。</p>
+<p>getAttribute(String name)    获取参数值。<br>getAttributeNamesInScope(int scope)    获取某范围的参数名称的集合。<br>getException()    获取exception对象。<br>getRequest()    获取request对象。<br>getResponse()    获取response对象。<br>getSession()    获取session对象。<br>getOut()    获取out对象。<br>setAttribute(String name,Object value)    为指定范围内的属性设置属性值。<br>removeAttribute(String name)    删除指定范围内的指定对象。<br>说明：pageContext对象在实际JSP开发过程中很少使用，因为request和response等对象均为内置对象，如果通过pageContext对象来调用这些对象比较麻烦。</p>
+<p>7、读取web.xml配置信息的config对象<br>config对象主要用于取得服务器的配置信息。当一个Servlet初始化时，容器把某些信息通过config对象传递给这个Servlet。开发者可以在web.xml文件中为应用程序环境中的Servlet程序和JSP页面提供初始化参数。</p>
+<p>config对象的常用方法如下：</p>
+<p>方法    说明<br>getServletContext()    获取Servlet上下文。<br>getServletName()    获取Servlet服务器名。<br>getInitParameter(String name)    获取服务器所有初始化参数名称。<br>getInitParameterNames()    获取服务器中name参数的初始值。</p>
+<p>8、应答或请求的page对象<br>page对象代表JSP本身，只有在JSP页面内才是合法的。page对象本质上是包含当前Servlet接口引用的变量，可以看作是this关键字的别名。</p>
+<p>page对象的常用方法如下：</p>
+<p>方法    说明<br>getClass()    返回当前Object的类。<br>hashCode()    返回该Object的哈希代码。<br>toString()    把该Object类转换成字符串。<br>equals(Object obj)    比较该对象和指定的对象是否相等。<br>示例：创建index.jsp文件，在该文件中调用page对象的各方法，并显示返回结果。</p>
+<p><%@ page language="java" contenttype="text/html; charset=UTF-8" pageencoding="UTF-8" %><br><!DOCTYPE html></%@></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta charset="UTF-8">
+<title>page对象各方法的应用</title>
+<meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+<%! object object; 声明一个object型的变量 %>
+<ul>
+    <li>getClass()方法的返回值:<%=page.getclass()%></%=page.getclass()%></li>
+    <li>hashCode()方法的返回值:<%=page.hashcode()%></%=page.hashcode()%></li>
+    <li>toString()方法的返回值:<%=page.tostring()%></%=page.tostring()%></li>
+    <li>与Object对象比较的返回值:<%=page.equals(object)%></%=page.equals(object)%></li>
+    <li>与this对象比较的返回值:<%=page.equals(this)%></%=page.equals(this)%></li>
+</ul>
+</%!></body>
+</html>
+执行结果：
+
+
+
+
+
+<p>9、获取异常信息的exception对象<br>exception对象用来处理JSP文件执行时发生的所有错误和异常，只有在page指令中设置 isErrorPage属性值为true的页面中才可以被使用，在一般的JSP页面中使用该对象将无法编译JSP文件。exception对象几乎定义了所有异常情况，在Java程序中，可以使用try...catch关键字来处理异常情况，如果在JSP页面中出现没有捕获到的异常，就会生成exception对象，并把exception对象传送到在page指令中定义的错误页面中，然后在错误页面中处理相应的exception对象。</p>
+<p>exception对象的常用方法如下：</p>
+<p>方法    说明<br>getMessage()    返回exception对象的异常信息字符串。<br>getLocalizedMessage()    返回本地化的异常错误。<br>toString()    返回关于异常错误的简单信息描述。<br>fillInStackTrace()    重写异常错误的栈行轨迹。<br>示例：使用exception对象获取异常信息。</p>
+<p>（1）创建index.jsp文件，在该文件中，首先在page指令中定义errorPage属性值为error.jsp，即指定显示异常信息的页面。</p>
+<p><%@ page language="java" contenttype="text/html; charset=UTF-8" <br>    pageEncoding="UTF-8" errorPage="error.jsp" %><br><!DOCTYPE html></%@></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta charset="UTF-8">
+<title>使用exception对象获取异常信息</title>
+<meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+<% request.setattribute("price", "12.5元"); 保存单价到request范围内的变量price中 float price="Float.parseFloat(request.getAttribute(" price").tostring());" 获取单价，并转换为float类型 %>
+</%></body>
+</html>
+（2）编写error.jsp文件，将该页面的page指令的 isErrorPage属性值设置为true，并且输出异常信息。
+
+<p><%@ page language="java" contenttype="text/html; charset=UTF-8" <br>    pageEncoding="UTF-8" isErrorPage="true" %><br><!DOCTYPE html></%@></p>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta charset="UTF-8">
+<title>错误提示页面</title>
+<meta name="author" content="pan_junbiao的博客">
+</head>
+<body>
+错误提示为：<%= exception.getmessage() %>
+</%=></body>
+</html>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
