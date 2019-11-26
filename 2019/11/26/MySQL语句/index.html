@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="MySQL语句1.创建数据库 CREATE DATABASE 数据库名;2.删除数据库 drop database 数据库名;3.选择数据库 mysql&amp;gt; use RUNOOB;4.创建表12,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十一月 26, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="MySQL语句"><a href="#MySQL语句" class="headerlink" title="MySQL语句"></a>MySQL语句</h1><h4 id="1-创建数据库-CREATE-DATABASE-数据库名"><a href="#1-创建数据库-CREATE-DATABASE-数据库名" class="headerlink" title="1.创建数据库 CREATE DATABASE 数据库名;"></a>1.创建数据库 CREATE DATABASE 数据库名;</h4><h4 id="2-删除数据库-drop-database-数据库名"><a href="#2-删除数据库-drop-database-数据库名" class="headerlink" title="2.删除数据库 drop database 数据库名;"></a>2.删除数据库 drop database 数据库名;</h4><h4 id="3-选择数据库-mysql-gt-use-RUNOOB"><a href="#3-选择数据库-mysql-gt-use-RUNOOB" class="headerlink" title="3.选择数据库 mysql&gt; use RUNOOB;"></a>3.选择数据库 mysql&gt; use RUNOOB;</h4><h3 id="4-创建表"><a href="#4-创建表" class="headerlink" title="4.创建表"></a>4.创建表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; CREATE TABLE runoob_tbl(</span><br><span class="line">-&gt; runoob_id INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">-&gt; runoob_title VARCHAR(100) NOT NULL,</span><br><span class="line">-&gt; runoob_author VARCHAR(40) NOT NULL,</span><br><span class="line">-&gt; submission_date DATE,</span><br><span class="line">-&gt; PRIMARY KEY ( runoob_id )</span><br><span class="line">-&gt; )ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7</p>
+<h4 id="5-删除表"><a href="#5-删除表" class="headerlink" title="5.删除表"></a>5.删除表</h4><p>mysql&gt; DROP TABLE runoob_tbl</p>
+<p>1</p>
+<h4 id="6-插入数据"><a href="#6-插入数据" class="headerlink" title="6.插入数据"></a>6.插入数据</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; INSERT INTO runoob_tbl</span><br><span class="line">-&gt; (runoob_title, runoob_author, submission_date)</span><br><span class="line">-&gt; VALUES</span><br><span class="line"></span><br><span class="line">-&gt; (&quot;学习 PHP&quot;, &quot;菜鸟教程&quot;, NOW());</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>3<br>4</p>
+<p>now（）返回日期和时间</p>
+<h4 id="7-MySQL-的-WHERE-子句的字符串比较是不区分大小写的。"><a href="#7-MySQL-的-WHERE-子句的字符串比较是不区分大小写的。" class="headerlink" title="7.MySQL 的 WHERE 子句的字符串比较是不区分大小写的。"></a>7.MySQL 的 WHERE 子句的字符串比较是不区分大小写的。</h4><p>你可以使用 BINARY 关键字来设定 WHERE 子句的字符串比较是区分大小写的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * from runoob_tbl WHERE BINARY runoob_author=&apos;runoob.com&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2</p>
+<h4 id="8-更新"><a href="#8-更新" class="headerlink" title="8.更新"></a>8.更新</h4><p>将 id 为 5 的手机号改为默认的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update students settel=default where id=5;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>将手机号为 13288097888 的姓名改为 “小明”, 年龄改为 19:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update students setname=&quot;小明&quot;, age=19 wheretel=&quot;13288097888&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>1</p>
+<h4 id="9-删除"><a href="#9-删除" class="headerlink" title="9.删除"></a>9.删除</h4><p>mysql&gt; DELETE FROM runoob_tbl WHERE runoob_id=3;<br>1</p>
+<h4 id="10-like子句"><a href="#10-like子句" class="headerlink" title="10.like子句"></a>10.like子句</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * from runoob_tbl WHERE runoob_author LIKE &apos;%COM&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>1</p>
+<h4 id="11-排序"><a href="#11-排序" class="headerlink" title="11.排序"></a>11.排序</h4><p>你可以使用 ASC 或 DESC 关键字来设置查询结果是按升序或降序排列。 默认情况下，它是按升序排列。</p>
+<p>这是升序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SELECT * from runoob_tbl ORDER BY submission_date ASC;</span><br></pre></td></tr></table></figure>
+
+<p>order by code,name desc等同于order by code asc, name desc</p>
+<p>这是降序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from a order by code desc, name desc;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7</p>
+<h4 id="12-常用聚合函数"><a href="#12-常用聚合函数" class="headerlink" title="12.常用聚合函数"></a>12.常用聚合函数</h4><p> 1  count    2   sum    3   avg    4   max    5   min<br>1</p>
+<h4 id="13-多表查询"><a href="#13-多表查询" class="headerlink" title="13.多表查询"></a>13.多表查询</h4><ul>
+<li>as关键字可用来做别名识别</li>
+<li>默认连接的是内连接（也叫做等值连接）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from book b inner join category c </span><br><span class="line">on b.category_id = c.category_id;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>相当于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from book b ,category c </span><br><span class="line">where b.category_id  = c.category_id;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>外连接有左右连接（如下）：</p>
+<ul>
+<li>左连接（以左边为基准）：<br>查询出所有的书籍分类，及每个分类下的书籍信息；</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from category c left （outer） join book b on c.category_id = b.category_id;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>右连接（以右边为基准）：<br>查询出所有的书籍分类，及每个分类下的书籍信息；<br>select c.<em>,b.</em> from book b right （outer） join category c on c.category_id = b.category_id;<br>1</p>
+<h4 id="14-NULL的处理"><a href="#14-NULL的处理" class="headerlink" title="14.NULL的处理"></a>14.NULL的处理</h4><p>查找数据表中 runoob_test_tbl 列是否为 NULL</p>
+<ul>
+<li>必须使用 IS NULL 和 IS NOT NULL</li>
+</ul>
+<h4 id="15-事务"><a href="#15-事务" class="headerlink" title="15.事务"></a>15.事务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use RUNOOB; </span><br><span class="line">Database changed </span><br><span class="line">mysql&gt; CREATE TABLE runoob_transaction_test( id int(5)) engine=innodb; </span><br><span class="line">Query OK, 0 rows affected (0.04 sec) </span><br><span class="line">mysql&gt; select * from runoob_transaction_test; </span><br><span class="line">Empty set (0.01 sec)</span><br><span class="line">mysql&gt; begin; # 开始事务 </span><br><span class="line">Query OK, 0 rows affected (0.00 sec) </span><br><span class="line">mysql&gt; insert into runoob_transaction_test value(5); </span><br><span class="line">Query OK, 1 rows affected (0.01 sec) </span><br><span class="line">mysql&gt; insert into runoob_transaction_test value(6); </span><br><span class="line">Query OK, 1 rows affected (0.00 sec) </span><br><span class="line">mysql&gt; commit; # 提交事务 </span><br><span class="line">Query OK, 0 rows affected (0.01 sec) </span><br><span class="line">mysql&gt; select * from runoob_transaction_test;</span><br><span class="line">+------+</span><br><span class="line">| id |</span><br><span class="line">+------+</span><br><span class="line">| 5 |</span><br><span class="line">| 6 |</span><br><span class="line">+------+</span><br><span class="line">2 rows in set (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; begin; # 开始事务</span><br><span class="line">Query OK, 0 rows affected (0.00 sec) </span><br><span class="line">mysql&gt; insert into runoob_transaction_test values(7); </span><br><span class="line">Query OK, 1 rows affected (0.00 sec) </span><br><span class="line">mysql&gt; rollback; # 回滚 </span><br><span class="line">Query OK, 0 rows affected (0.00 sec) </span><br><span class="line">mysql&gt; select * from runoob_transaction_test; # 因为回滚所以数据没有插入</span><br><span class="line">+------+</span><br><span class="line">| id |</span><br><span class="line">+------+</span><br><span class="line">| 5 | | 6 |</span><br><span class="line">+------+ </span><br><span class="line">2 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36</p>
+<h4 id="16-alter命令"><a href="#16-alter命令" class="headerlink" title="16.alter命令"></a>16.alter命令</h4><p>删除，添加表字段</p>
+<p>ALTER TABLE testalter_tbl DROP i;               —删除i字段<br>ALTER TABLE testalter_tbl ADD i INT FIRST;   —-增加i字段，并放在第一位<br>ALTER TABLE testalter_tbl ADD i INT AFTER c;   —增加i字段，并放在c字段后面<br>1<br>2<br>3<br>修改字段类型及名称（两种方法 modify —修改字段的类型和change —–修改名字）</p>
+<p>mysql&gt; ALTER TABLE testalter_tbl CHANGE i j BIGINT; ——把i字段修改为新的字段名<br>mysql &gt; ALTER TABLE testalter_tbl MODIFY c CHAR(10); —-把c字段的类型改为char（10）<br>1<br>2<br>修改字段默认值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;</span><br><span class="line">mysql&gt; ALTER TABLE testalter_tbl ALTER i DROP DEFAULT; -----删除默认值</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>修改表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER TABLE testalter_tbl RENAME TO alter_tbl; ----修改表名</span><br></pre></td></tr></table></figure>
+
+<p>1<br>修改结构增加索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER table tableName ADD INDEX indexName(columnName)</span><br></pre></td></tr></table></figure>
+
+<p>1<br>创建表时直接指定：</p>
+<p>增加主键：primary key（field_name）<br>增加外键：FOREIGN KEY (<code>category_id</code>) REFERENCES <code>category</code> (<code>category_id</code>)<br>增加索引： INDEX(year_publication)<br>1<br>2<br>3<br>修改表时：</p>
+<p>增加主键： ALTER TABLE <code>book</code>DROP PRIMARY KEY,ADD PRIMARY KEY (<code>isbn</code>);<br>增加外键：ALTER TABLE <code>book</code> ADD FOREIGN KEY (<code>category_id</code>) REFERENCES <code>category</code> (<code>category_id</code>);<br>增加索引：ALTER TABLE <code>book</code> ADD INDEX (<code>book_name</code>) ; 删除：DROP INDEX [indexName] ON mytable;<br>更新外键：  官方做法是先删除原来的外键后再添加更新后的外键<br>1<br>2<br>3<br>4</p>
+<h4 id="17-分页查询"><a href="#17-分页查询" class="headerlink" title="17.分页查询"></a>17.分页查询</h4><p>查询第11到第15条数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name limit 10,5</span><br></pre></td></tr></table></figure>
+
+<p>1<br>limit关键字的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LIMIT [offset,] rows</span><br></pre></td></tr></table></figure>
+
+<p>offset指定要返回的第一行的偏移量，rows第二个指定返回行的最大数目。<br>初始行的偏移量是0(不是1)。<br>1<br>2<br>3<br>18.创建视图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create view demo_view as select * from demo_table;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>好处1：减少数据的冗余，方便对数据操作</p>
+<p>数据库虽然可以存储海量数据，但是在数据表设计上却不可能每种关系创建数据表<br>例如，对于学生表，存储了学生信息，学生的属性包括学号、姓名、年龄、家庭地址等信息；而学生成绩表只存储了学生学号、科目、成绩等信息。现获得学生姓名和成绩信息，那么就需要创建一个关系，该关系需要包含学生的姓名、科目、成绩。但是为了该关系创建一个新的数据表，并利用实际信息进行填充，以备查询使用，是不合适的，这样会造成了数据库中数据的大量冗余。<br>视图就是解决这个问题的最佳策略，因此视图可以存储查询定义，一旦使用视图存储了查询定义，就如同存储了一个新的关系，用户就可以直接对视图中所存储的关系进行各种操作，就如同面对的是真实的数据表。<br>好处2：数据的安全和保密</p>
+<p>一个数据表可能包含很多列，但是这些列的信息，对于不同的角色来说，肯定不是全部公开的，对于员工表来说吧，一个普通的员工只能看见这个员工表中的姓名和年龄这些信息，但是对于高层来说，他们要看见员工表中更多信息，不仅仅是上面的两列还有其他的信息，包括员工的住址和员工的薪资待遇，这个时候都是同一张表，怎么办？视图可以解决呀，首先建立一个视图只有员工的姓名和年龄，再建一个视图包含地址和薪资待遇的信息。这样就可以根据不同的角色分配两个视图的查询权限，与实际表隔离开来。这样就可以提高数据访问的安全性了。<br>19.创建存储过程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">DELIMITER //</span><br><span class="line">CREATE PROCEDURE myproc(OUT s int)</span><br><span class="line">BEGIN</span><br><span class="line">SELECT COUNT(*) INTO s FROM students;</span><br><span class="line">END</span><br><span class="line">//</span><br><span class="line">DELIMITER ;</span><br></pre></td></tr></table></figure>
+
+<p>1<br>2<br>3<br>4<br>5<br>6<br>7<br>20.触发器</p>
+<p>CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt<br>trigger_name：触发器的名称<br>tirgger_time：触发时机，为BEFORE或者AFTER<br>trigger_event：触发事件，为INSERT、DELETE或者UPDATE<br>tb_name：表示建立触发器的表明，就是在哪张表上建立触发器<br>trigger_stmt：触发器的程序体，可以是一条SQL语句或者是用BEGIN和END包含的多条语句<br>1<br>2<br>3<br>4<br>5<br>6<br>所以可以说MySQL创建以下六种触发器：</p>
+<p>BEFORE INSERT,BEFORE DELETE,BEFORE UPDATE<br>AFTER INSERT,AFTER DELETE,AFTER UPDATE<br>1<br>2<br>tips：一般情况下，mysql默认是以 ; 作为结束执行语句，与触发器中需要的分行起冲突为解决此问题可用DELIMITER，如：DELIMITER ||，可以将结束符号变成||当触发器创建完成后，可以用DELIMITER ;来将结束符号变成;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; DELIMITER ||</span><br><span class="line">mysql&gt; CREATE TRIGGER demo BEFORE DELETE</span><br><span class="line">    -&gt; ON users FOR EACH ROW</span><br><span class="line">    -&gt; BEGIN</span><br><span class="line">    -&gt; INSERT INTO logs VALUES(NOW());</span><br><span class="line">    -&gt; INSERT INTO logs VALUES(NOW());</span><br><span class="line">    -&gt; END</span><br><span class="line">    -&gt; ||</span><br><span class="line">Query OK, 0 rows affected (0.06 sec)</span><br><span class="line">mysql&gt; CREATE TABLE account (acct_num INT, amount DECIMAL(10,2));</span><br><span class="line">mysql&gt; INSERT INTO account VALUES(137,14.98),(141,1937.50),(97,-100.00);</span><br><span class="line">mysql&gt; delimiter $$</span><br><span class="line">mysql&gt; CREATE TRIGGER upd_check BEFORE UPDATE ON account</span><br><span class="line">-&gt; FOR EACH ROW</span><br><span class="line">-&gt; BEGIN</span><br><span class="line">-&gt; 　　IF NEW.amount &lt; 0 THEN</span><br><span class="line">-&gt; 　　　　SET NEW.amount = 0;</span><br><span class="line">-&gt; 　　ELSEIF NEW.amount &gt; 100 THEN</span><br><span class="line">-&gt; 　　　　SET NEW.amount = 100;</span><br><span class="line">-&gt; 　　END IF;</span><br><span class="line">-&gt; END$$</span><br><span class="line">mysql&gt; delimiter;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
