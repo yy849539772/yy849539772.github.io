@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="jQuery总结一、jQuery选择器jQuery 元素选择器jQuery 使用 CSS 选择器来选取 HTML 元素。
+$(“p”) 选取  元素。
+$(“p.intro”) 选取所有 class,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十一月 26, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="jQuery总结"><a href="#jQuery总结" class="headerlink" title="jQuery总结"></a>jQuery总结</h1><h3 id="一、jQuery选择器"><a href="#一、jQuery选择器" class="headerlink" title="一、jQuery选择器"></a>一、jQuery选择器</h3><p>jQuery 元素选择器<br>jQuery 使用 CSS 选择器来选取 HTML 元素。</p>
+<p>$(“p”) 选取 </p><p> 元素。</p>
+<p>$(“p.intro”) 选取所有 class=”intro” 的 </p><p> 元素。</p>
+<p>$(“#demo”) 选取所有 id=”demo” 的 元素。</p>
+<p>$(this)选取当前的html元素（关于this与$(this）的区别下面会讲）</p>
+<p>更多的选择器示例，请访问 jQuery 选择器参考手册。</p>
+<h3 id="二、jQuery语法"><a href="#二、jQuery语法" class="headerlink" title="二、jQuery语法"></a>二、jQuery语法</h3><p>基础语法是：$(selector).action()</p>
+<p>美元符号定义 jQuery<br>选择符（selector）“查询”和“查找” HTML 元素<br>jQuery 的 action() 执行对元素的操作<br>示例：</p>
+<p>$(this).hide() - 隐藏当前元素</p>
+<p>$(“p”).hide() - 隐藏所有段落</p>
+<p>$(“.test”).hide() - 隐藏所有 class=”test” 的所有元素</p>
+<p>$(“#test”).hide() - 隐藏所有 id=”test” 的元素</p>
+<h3 id="三、JQuery-this和-this-的区别"><a href="#三、JQuery-this和-this-的区别" class="headerlink" title="三、JQuery this和$(this)的区别"></a>三、JQuery this和$(this)的区别</h3><p>// this其实是一个Html 元素。<br>// 而$(this)是个转换，将this表示的dom对象转为jquery对象，这样就可以使用jquery提供的方法操作。</p>
+<pre><code>首先来看看JQuery中的  $()  这个符号，实际上这个符号在JQuery中相当于JQuery（）,即$(this)=jquery();也就是说，这样可以返回一个jquery对象。那么，当你在网页中alert($(&apos;#id&apos;));时，会弹出一个[object Object ]，这个object对象，也就是jquery对象了。</code></pre><p>   那么，我们再回过头来说$(this)，这个this是什么呢？假设我们有如下的代码：</p>
+<p>$(“#desktop a img”).each(function(index){</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alert($(<span class="keyword">this</span>));</span><br><span class="line"></span><br><span class="line">alert(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+
+<p>}</p>
+<p>那么，这时候可以看出来：</p>
+<p>alert($(this));  弹出的结果是[object Object ]</p>
+<p>alert(this);        弹出来的是[object HTMLImageElement]</p>
+<p>也就是说，后者返回的是一个html对象(本例中是遍历HTML的img对象，所以为HTMLImageElement)。</p>
+<p>很多人在使用jquery的时候，经常this.attr(‘src’);   这时会报错“对象不支持此属性或方法”，这又是为什么呢？其实看明白上面的例子，就知道错在哪里了：很简单，this操作的是HTML对象，那么，HTML对象中怎么会有val()方法了，所以，在使用中，我们不能直接用this来直接调用jquery的方法或者属性。</p>
+<h3 id="四、jQuery事件"><a href="#四、jQuery事件" class="headerlink" title="四、jQuery事件"></a>四、jQuery事件</h3><p>Event 函数    绑定函数至<br>$(document).ready(function)    将函数绑定到文档的就绪事件（当文档完成加载时）<br>$(selector).click(function)    触发或将函数绑定到被选元素的点击事件<br>$(selector).dblclick(function)    触发或将函数绑定到被选元素的双击事件<br>$(selector).focus(function)    触发或将函数绑定到被选元素的获得焦点事件<br>$(selector).mouseover(function)    触发或将函数绑定到被选元素的鼠标悬停事件<br>更多jquery事件，请参考 jQuery 事件参考手册。</p>
+<h3 id="五、jQuery隐藏和显示"><a href="#五、jQuery隐藏和显示" class="headerlink" title="五、jQuery隐藏和显示"></a>五、jQuery隐藏和显示</h3><p>语法：</p>
+<p>$(selector).hide(speed,callback);</p>
+<p>$(selector).show(speed,callback);<br>可选的 speed 参数规定隐藏/显示的速度，可以取以下值：”slow”、”fast” 或毫秒。</p>
+<p>可选的 callback 参数是隐藏或显示完成后所执行的函数名称。</p>
+<p>通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法。</p>
+<p>语法：</p>
+<p>$(selector).toggle(speed,callback);<br>注意：Callback 函数在当前动画 100% 完成之后执行。</p>
+<h3 id="六、jQuery获取以及设置值"><a href="#六、jQuery获取以及设置值" class="headerlink" title="六、jQuery获取以及设置值"></a>六、jQuery获取以及设置值</h3><p>三个简单实用的用于 DOM 操作的 jQuery 方法：</p>
+<p>获取值： </p>
+<p>text() - 设置或返回所选元素的文本内容<br>html() - 设置或返回所选元素的内容（包括 HTML 标记）<br>val() - 设置或返回表单字段的值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">"Text: "</span> + $(<span class="string">"#test"</span>).text());</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">"HTML: "</span> + $(<span class="string">"#test"</span>).html());</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">"#btn3"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">"Value: "</span> + $(<span class="string">"#test"</span>).val());</span><br><span class="line">&#125;);</span><br><span class="line">设置值：</span><br><span class="line"></span><br><span class="line">$(<span class="string">"#btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#test1"</span>).text(<span class="string">"Hello world!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">"#btn2"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#test2"</span>).html(<span class="string">"&lt;b&gt;Hello world!&lt;/b&gt;"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">$(<span class="string">"#btn3"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#test3"</span>).val(<span class="string">"Dolly Duck"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="七、jQuery遍历"><a href="#七、jQuery遍历" class="headerlink" title="七、jQuery遍历"></a>七、jQuery遍历</h3><p>jQuery parent() 方法：</p>
+<p>parent() 方法返回被选元素的直接父元素。</p>
+<p>jQuery children() 方法</p>
+<p>children() 方法返回被选元素的所有直接子元素。</p>
+<p>jQuery find() 方法</p>
+<p>find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。</p>
+<p>提示：如果只需要返回特定的父级元素或者后代元素，只需要指定选择器即可。</p>
+<p>例如：返回div元素下id为btn的元素</p>
+<p>$(“div”).find(“#btn”);</p>
+<h3 id="八、jQuery-DOM-元素方法"><a href="#八、jQuery-DOM-元素方法" class="headerlink" title="八、jQuery DOM 元素方法"></a>八、jQuery DOM 元素方法</h3><p>函数描述<br>.get()    获得由选择器指定的 DOM 元素。<br>.index()    返回指定元素相对于其他指定元素的 index 位置。<br>.size()    返回被 jQuery 选择器匹配的元素的数量。<br>.toArray()    以数组的形式返回 jQuery 选择器匹配的元素。<br> 九、jQuery AJAX<br>1、jQuery load() 方法<br>jQuery load() 方法是简单但强大的 AJAX 方法。</p>
+<p>load() 方法从服务器加载数据，并把返回的数据放入被选元素中。</p>
+<p>语法：</p>
+<p>$(selector).load(URL,data,callback);<br>必需的 URL 参数规定您希望加载的 URL。</p>
+<p>可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。</p>
+<p>可选的 callback 参数是 load() 方法完成后所执行的函数名称。</p>
+<p>示例：</p>
+<p>这是示例文件（”demo_test.txt”）的内容：</p>
+<h2>jQuery and AJAX is FUN!!!</h2>
+<p id="p1">This is some text in a paragraph.</p>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $('#test').load('/example/jquery/demo_test.txt');
+  })
+})
+</script>
+
+
+<body>
+
+<h3 id="test">请点击下面的按钮，通过 jQuery AJAX 改变这段文本。</h3>
+<button id="btn1" type="button">获得外部的内容</button>
+
+</body>
+效果截图：
+
+
+
+<p>2、jQuery - AJAX get() 和 post() 方法<br>$.get() 方法通过 HTTP GET 请求从服务器上请求数据。</p>
+<p>语法：</p>
+<p>$.get(URL,callback);<br>必需的 URL 参数规定您希望请求的 URL。</p>
+<p>可选的 callback 参数是请求成功后所执行的函数名。</p>
+<p>示例：</p>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("/example/jquery/demo_test.asp",function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+});
+</script>
+
+<body>
+
+<p><button>向页面发送 HTTP GET 请求，然后获得返回的结果</button></p>
+</body>
+效果截图：
+
+
+
+<p>提示：</p>
+<p>$.get() 的第一个参数是我们希望请求的 URL（”demo_test.asp”）。</p>
+<p>第二个参数是回调函数。第一个回调参数存有被请求页面的内容，第二个回调参数存有请求的状态。</p>
+<p>提示：这个 ASP 文件 (“demo_test.asp”) 类似这样：</p>
+<p>&lt;%<br>response.write(“This is some text from an external ASP file.”)<br>%&gt;<br>$.post() 方法通过 HTTP POST 请求从服务器上请求数据。</p>
+<p>语法：</p>
+<p>$.post(URL,data,callback);<br>必需的 URL 参数规定您希望请求的 URL。</p>
+<p>可选的 data 参数规定连同请求发送的数据。</p>
+<p>可选的 callback 参数是请求成功后所执行的函数名。</p>
+<p>示例：</p>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.post("/example/jquery/demo_test_post.asp",
+    {
+      name:"Donald Duck",
+      city:"Duckburg"
+    },
+    function(data,status){
+      alert("数据：" + data + "\n状态：" + status);
+    });
+  });
+});
+</script>
+
+<body>
+
+<p><button>向页面发送 HTTP POST 请求，并获得返回的结果</button><br>效果截图：</p>
+<p>提示：</p>
+<p>$.post() 的第一个参数是我们希望请求的 URL (“demo_test_post.asp”)。</p>
+<p>然后我们连同请求（name 和 city）一起发送数据。</p>
+<p>“demo_test_post.asp” 中的 ASP 脚本读取这些参数，对它们进行处理，然后返回结果。</p>
+<p>第三个参数是回调函数。第一个回调参数存有被请求页面的内容，而第二个参数存有请求的状态。</p>
+<p>提示：这个 ASP 文件 (“demo_test_post.asp”) 类似这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">dim fname,city</span><br><span class="line">fname=Request.Form(&quot;name&quot;)</span><br><span class="line">city=Request.Form(&quot;city&quot;)</span><br><span class="line">Response.Write(&quot;Dear &quot; &amp; fname &amp; &quot;. &quot;)</span><br><span class="line">Response.Write(&quot;Hope you live well in &quot; &amp; city &amp; &quot;.&quot;)</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+</body>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
