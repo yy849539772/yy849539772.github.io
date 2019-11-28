@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="**前端知识点总结——VUE1.框架和库的区别：框架：framework 有着自己的语法特点、都有对应的各个模块库 library 专注于一点
+框架的好处：
+12341.提到代码的质量，开发速度2.,"> 
+    <meta name="author" content="John Doe"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十一月 28, 2019</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <h1 id="前端知识点总结——VUE"><a href="#前端知识点总结——VUE" class="headerlink" title="**前端知识点总结——VUE"></a>**前端知识点总结——VUE</h1><h2 id="1-框架和库的区别："><a href="#1-框架和库的区别：" class="headerlink" title="1.框架和库的区别："></a>1.框架和库的区别：</h2><p>框架：framework 有着自己的语法特点、都有对应的各个模块<br>库 library 专注于一点</p>
+<p>框架的好处：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.提到代码的质量，开发速度</span><br><span class="line">2.提高代码的复用率</span><br><span class="line">3.降低模块之间的耦合度</span><br><span class="line">（高内聚低耦合）</span><br></pre></td></tr></table></figure>
+
+<p>UI：user interface<br>GUI : graphical user interface<br>CLI : command line interface<br>API : application interface</p>
+<p>思维模式的转换：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">从操作DOM的思维模式 切换到 以数据为主</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Vue概述"><a href="#2-Vue概述" class="headerlink" title="2.Vue概述"></a>2.Vue概述</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1、what    </span><br><span class="line">    是一个渐进式的构建用户界面的js框架</span><br><span class="line">2、where</span><br><span class="line">    小到的简单的表单处理，大到复杂的数据操作比较频繁的单页面应用程序</span><br><span class="line">3、why</span><br><span class="line">    1.方便阅读的中文文档</span><br><span class="line">    2.容易上手 （学习曲线比较缓和）</span><br><span class="line">    3.体积小</span><br><span class="line">    4.基于组件化的开发方式</span><br><span class="line">    5.代码的可读性、可维护性得到了提高</span><br><span class="line">4、how</span><br><span class="line">    工作方式：可以通过丰富的指令扩展模板，可以通过各种各样的插件来增强功能</span><br><span class="line"></span><br><span class="line">    搭建环境：</span><br><span class="line">    方式1</span><br><span class="line">         全局安装 vue-cli</span><br><span class="line">        $ npm install --global vue-cli</span><br><span class="line">        # 创建一个基于 webpack 模板的新项目</span><br><span class="line">        $ vue init webpack my-project</span><br><span class="line">        # 安装依赖，走你</span><br><span class="line">        $ cd my-project</span><br><span class="line">        $ npm install</span><br><span class="line">        $ npm run dev</span><br><span class="line">    方式2:</span><br><span class="line">        直接引入对应的js文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Vue中基础知识"><a href="#3-Vue中基础知识" class="headerlink" title="3.Vue中基础知识"></a>3.Vue中基础知识</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">1、双花括号</span><br><span class="line">    mustache(胡子)/interpolation（插值表达式）</span><br><span class="line"></span><br><span class="line">    语法：</span><br><span class="line">    &lt;any&gt;&#123;&#123;表达式&#125;&#125;&lt;/any&gt;</span><br><span class="line">    作用：</span><br><span class="line">    将表达式执行的结果 输出当调用元素的innerHTML中；还可以将数据绑定到视图</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">2、指令-循环指令</span><br><span class="line">    基本语法1：</span><br><span class="line">    &lt;any v-for=&quot;tmp in array&quot;&gt;&lt;/any&gt;</span><br><span class="line">    基本语法2：</span><br><span class="line">    &lt;any v-for=&quot;(value,index) in array&quot;&gt;&lt;/any&gt;</span><br><span class="line">    </span><br><span class="line">    作用：</span><br><span class="line">    在遍历array这个集合时，将临时变量保存在tmp中，创建多个any标签</span><br><span class="line"></span><br><span class="line">3、指令-选择指令</span><br><span class="line">    语法：</span><br><span class="line">      &lt;any v-if=&quot;表达式&quot;&gt;&lt;/any&gt;</span><br><span class="line">      &lt;any v-else-if=&quot;表达式&quot;&gt;&lt;/any&gt;</span><br><span class="line">      &lt;any v-else=&quot;表达式&quot;&gt;&lt;/any&gt;</span><br><span class="line">    作用：</span><br><span class="line">      根据表达式执行结果的真假，来决定是否要将当前的这个元素 挂载到DOM树</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4、指令-事件绑定</span><br><span class="line">    语法：</span><br><span class="line">        &lt;any v-on:eventName=&quot;handleEvent&quot;&gt;&lt;/any&gt;</span><br><span class="line">    作用：</span><br><span class="line">        给指定的元素 将handleEvent的方法绑定给指定eventName事件</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">5、指令-属性绑定</span><br><span class="line">  基本语法：</span><br><span class="line">    &lt;any v-bind:myProp=&quot;表达式&quot;&gt;&lt;/any&gt;</span><br><span class="line">    补充，支持简写：</span><br><span class="line">    &lt;any :myProp=&quot;表达式&quot;&gt;&lt;/any&gt;</span><br><span class="line">  作用：</span><br><span class="line">    将表达式执行的结果 绑定 到当前元素的myProp属性</span><br><span class="line"></span><br><span class="line">    &lt;img v-bind:src=&quot;&apos;img/&apos;+myImg&quot; alt=&quot;&quot;&gt;</span><br><span class="line">   动态样式绑定</span><br><span class="line">    &lt;p :style=&quot;&#123;backgroundColor:myBGColor&#125;&quot;&gt;动态样式绑定&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">   动态样式类绑定</span><br><span class="line">      &lt;h1 :class=&quot;&#123;myRed:false&#125;&quot;&gt;动态样式类的绑定&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">6、指令-双向数据绑定</span><br><span class="line">    方向1：数据绑定到视图</span><br><span class="line">    方向2：将视图中（表单元素）用户操作的结果绑定到数据</span><br><span class="line"></span><br><span class="line">    基本语法:</span><br><span class="line">      &lt;表单元素 v-model=&quot;变量&quot;&gt;</span><br><span class="line">      &lt;/表单元素&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-组件化"><a href="#4-组件化" class="headerlink" title="4.组件化"></a>4.组件化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">组件：组件就是可被反复使用的，带有特定功能的视图</span><br><span class="line"></span><br><span class="line">所谓的组件化，就像玩积木一样，把封装的组件进行复用,把积木（组件）拼接在一起，构成一个复杂的页面应用程序。</span><br><span class="line"></span><br><span class="line">组件树就是由各个组件构成的一种数据结构，它存在的意义是为了帮梳理应用程序</span><br><span class="line"></span><br><span class="line">1、组件的创建</span><br><span class="line">  全局组件</span><br><span class="line">    Vue.component(&apos;my-com&apos;,&#123;</span><br><span class="line">      template:`</span><br><span class="line">        &lt;h2&gt;it is a header&lt;/h2&gt;</span><br><span class="line">      `</span><br><span class="line">    &#125;)</span><br><span class="line">      局部组件</span><br><span class="line">    new Vue(&#123;</span><br><span class="line">        components:&#123;</span><br><span class="line">            &apos;my-footer&apos;:&#123;</span><br><span class="line">           template:&apos;&apos;</span><br><span class="line">         &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">2、组件使用</span><br><span class="line">    作为普通的标签去使用</span><br><span class="line">    &lt;my-com&gt;&lt;/my-com&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3、注意事项</span><br><span class="line">    1.组件的id和使用方式 遵循烤串式命名方式：a-b-c </span><br><span class="line">    2.如果一个组件 要渲染多个元素，将多个元素放在一个顶层标签中，比如div、form</span><br><span class="line">    3.全局组件可以用在id为example的范围内的任何一个组件内部，直接调用可以；但是局部组件只能在父模板中直接调用</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-自定义指令"><a href="#5-自定义指令" class="headerlink" title="5.自定义指令"></a>5.自定义指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1、创建和使用</span><br><span class="line"> Vue.directive(&apos;change&apos;,&#123;</span><br><span class="line">    bind:function(el,bindings)&#123;</span><br><span class="line">    //首次调用</span><br><span class="line">    &#125;,</span><br><span class="line">    update:function(el,bindings)&#123;</span><br><span class="line">    //只要是有数据变化，都会调用</span><br><span class="line">    &#125;,</span><br><span class="line">    unbind:function()&#123;</span><br><span class="line">    //解绑</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;)</span><br><span class="line"> &lt;any v-change=&quot;count&quot;&gt;&lt;/any&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-过滤器"><a href="#6-过滤器" class="headerlink" title="6.过滤器"></a>6.过滤器</h2><p>过滤器是针对一些数据 进行筛选、过滤、格式化等相关的处理，变成我们想要的数据</p>
+<p>过滤器的本质 就是一个带有参数带有返回值的方法</p>
+<p>Vue1. <em>支持内置的过滤器，但是Vue2.</em> 就不再内置过滤器，但是支持自定义过滤器。</p>
+<p>1、过滤器的创建和使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1.创建</span><br><span class="line">   Vue.filter(</span><br><span class="line">    &apos;myFilter&apos;,</span><br><span class="line">    function(myInput)&#123;</span><br><span class="line">       //myInput是在调用过滤器时，管道前表达式执行的结果</span><br><span class="line">       //针对myInput，按照业务需求做处理</span><br><span class="line">       //返回</span><br><span class="line">       return &apos;处理后的结果&apos;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">2.使用</span><br><span class="line">    &lt;any&gt;&#123;&#123;expression | myFilter&#125;&#125;&lt;/any&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、如何在调用过滤器时，完成参数的发送和接受</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.发送</span><br><span class="line">&lt;any&gt;&#123;&#123;expression | myFilter(参数1，参数2)&#125;&#125;&lt;/any&gt;</span><br><span class="line"></span><br><span class="line">2.接受</span><br><span class="line">Vue.filter(&apos;myFilter&apos;,function(myInput，参数1，参数2)&#123;</span><br><span class="line">    return &apos;处理后的结果&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="7-复合组件"><a href="#7-复合组件" class="headerlink" title="7.复合组件"></a>7.复合组件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">知识回顾：</span><br><span class="line">  Vue.component(&apos;my-header&apos;,&#123;</span><br><span class="line">    template:`&lt;div&gt;&lt;/div&gt;`</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  &lt;my-header&gt;&lt;/my-header&gt;</span><br><span class="line"></span><br><span class="line"> 复合组件：并不是新的概念，就是一个组件，只不过这个组件中 可以调用其他的组件</span><br><span class="line"></span><br><span class="line"> 注意事项：</span><br><span class="line">  1.组件要渲染的内容 取决于在定义组件时template</span><br><span class="line">  </span><br><span class="line">  &lt;my-list&gt;</span><br><span class="line">    &lt;my-item&gt;&lt;/my-item&gt;</span><br><span class="line">  &lt;/my-list&gt;</span><br><span class="line">  效果是出不来的</span><br><span class="line">  2.允许在一个组件中，直接来调用另外一个组件</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-生命周期"><a href="#8-生命周期" class="headerlink" title="8.生命周期"></a>8.生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">四个阶段：</span><br><span class="line">    create 准备工作 （数据的初始化。。。）</span><br><span class="line">    mount  挂载前后针对元素进行操作</span><br><span class="line">    update 数据发生变化，</span><br><span class="line">    destroy 清理工作 (关闭定时器、集合清空..)</span><br><span class="line"></span><br><span class="line">    beforeCreate/created</span><br><span class="line">    beforeMount/mounted</span><br><span class="line">    beforeUpdate/updated</span><br><span class="line">    beforeDestroy/destroyed</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-常用属性"><a href="#9-常用属性" class="headerlink" title="9.常用属性"></a>9.常用属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">1、watch</span><br><span class="line">       1. 表单元素的双向数据绑定</span><br><span class="line">   v-model=&quot;myValue&quot;</span><br><span class="line">   2.监听</span><br><span class="line">    watch:&#123;</span><br><span class="line">    myValue:function(newValue,oldValue)&#123;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">2、computed</span><br><span class="line">    计算属于是用于在模板中，搞定复杂的业务逻辑，因为有依赖缓存。</span><br><span class="line">    1.指定计算属性</span><br><span class="line">        computed:&#123;</span><br><span class="line">          myHandle:function()&#123;</span><br><span class="line">           return 数据</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    2.调用</span><br><span class="line">        &lt;any&gt;&#123;&#123;myHandle&#125;&#125;&lt;/any&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-组件间通信"><a href="#10-组件间通信" class="headerlink" title="10.组件间通信"></a>10.组件间通信</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">1、父与子通信 （props down）</span><br><span class="line">    1.发送</span><br><span class="line">        &lt;son myName=&apos;zhangsan&apos;&gt;</span><br><span class="line">        &lt;/son&gt;</span><br><span class="line">    2.接受</span><br><span class="line">        到son组件：</span><br><span class="line">        Vue.component(&apos;son&apos;,&#123;</span><br><span class="line">          props:[&apos;myName&apos;],</span><br><span class="line">          template:`</span><br><span class="line">           &lt;p&gt;&#123;&#123;myName&#125;&#125;&lt;/p&gt;</span><br><span class="line">          `</span><br><span class="line">        &#125;)</span><br><span class="line">    </span><br><span class="line">2、子与父通信 (events up)</span><br><span class="line">     1.绑定</span><br><span class="line">    methods:&#123;</span><br><span class="line">     handleEvent:function(msg)&#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;son @customEvent=&quot;handleEvent&quot;&gt;&lt;/son&gt;</span><br><span class="line">    2.触发</span><br><span class="line">    子组件内部：</span><br><span class="line">    this.$emit(‘customEvent’,100);</span><br><span class="line"></span><br><span class="line">3、ref(reference 引用/参考 外号)</span><br><span class="line"> 帮助在父组件中 得到子组件中的数据、方法。</span><br><span class="line">    1.指定ref属性</span><br><span class="line">    &lt;son ref=&quot;mySon&quot;&gt;&lt;/son&gt;</span><br><span class="line"></span><br><span class="line">    2.根据ref得到子组件实例</span><br><span class="line">    this.$refs.mySon</span><br><span class="line"></span><br><span class="line">4、$parent</span><br><span class="line">    this.$parent得到父组件的实例</span><br><span class="line"></span><br><span class="line">5、兄弟组件通信</span><br><span class="line">    1.var bus = new Vue();</span><br><span class="line">    2.接收方</span><br><span class="line">    bus.$on(&apos;eventName&apos;,function(msg)&#123;&#125;)</span><br><span class="line">    3.发送方</span><br><span class="line">    bus.$emit(&apos;eventName&apos;,123);</span><br></pre></td></tr></table></figure>
+
+<h2 id="11-补充组件创建的方式"><a href="#11-补充组件创建的方式" class="headerlink" title="11.补充组件创建的方式"></a>11.补充组件创建的方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">1、直接在template属性中指定模板内容</span><br><span class="line">    1.全局组件</span><br><span class="line">    Vue.component</span><br><span class="line">    2.局部组件</span><br><span class="line">    &#123;</span><br><span class="line">      components:&#123;</span><br><span class="line">        &apos;my-footer&apos;：&#123;template:``&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">2、.vue结尾的文件</span><br><span class="line">    &lt;template&gt;&lt;/template&gt;</span><br><span class="line">    &lt;script&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style&gt;&lt;/style&gt;</span><br><span class="line">3、单独指定一个模板内容</span><br><span class="line">    &lt;script</span><br><span class="line">    id=&apos;myContent&apos;</span><br><span class="line">    type=&apos;text/x-template&apos;&gt;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    Vue.component(&apos;&apos;,&#123;</span><br><span class="line">      template:&apos;#myContent&apos;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-路由模块"><a href="#12-路由模块" class="headerlink" title="12.路由模块"></a>12.路由模块</h2><p>路由模块的本质 就是建立起url和页面之间的映射关系</p>
+<p>1、SPA的基本概念和工作原理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">SPA：single page application 单一页面应用程序，只有一个完整的页面；</span><br><span class="line">它在加载页面时，不会加载整个页面，而是只更新某个指定的容器中内容。</span><br><span class="line">比如Gmail、移动的webApp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">工作原理：</span><br><span class="line">1.解析地址栏 </span><br><span class="line">    完整的页面地址、路由地址</span><br><span class="line">2.根据路由地址 从路由词典中找到真正的要加载的页面</span><br><span class="line">3.发起ajax请求 </span><br><span class="line">    请求要加载的页面</span><br><span class="line">4.像指定的容器中 插入加载来的页面</span><br></pre></td></tr></table></figure>
+
+<p>2、路由模块的基本使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">专业术语： </span><br><span class="line">    router路由器 </span><br><span class="line">    route路由</span><br><span class="line">    routes 路由数组（路由词典）</span><br><span class="line">1.引入vue.js vue-router.js</span><br><span class="line">2.指定一个容器</span><br><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">3.创建业务所需要用到的组件类</span><br><span class="line">        var MyLogin = Vue.component()</span><br><span class="line">4.配置路由词典</span><br><span class="line"> const myRoutes = [</span><br><span class="line">  &#123;path:&apos;&apos;,component:MyLogin&#125;,</span><br><span class="line">  &#123;path:&apos;/login&apos;,component:MyLogin&#125;</span><br><span class="line"> ];</span><br><span class="line"></span><br><span class="line"> const myRouter = new VueRouter(&#123;</span><br><span class="line">  routes:myRoutes</span><br><span class="line"> &#125;)</span><br><span class="line"></span><br><span class="line"> new Vue(&#123;</span><br><span class="line">   router:myRouter</span><br><span class="line"> &#125;)</span><br><span class="line">5.测试</span><br><span class="line">    修改地址栏中的路由地址，测试看加载的组件是否正确</span><br><span class="line"></span><br><span class="line">注意事项：</span><br><span class="line"> 1.先引入vue，再引入插件</span><br><span class="line"> 2.一定要指定router-view</span><br><span class="line"> 3.route路由 &#123;path:&apos;&apos;,component:&#125;</span><br><span class="line">  routes 路由数组 []</span><br><span class="line">  router 路由器:按照指定的路由规则去访问对应的组件 new VueRouter</span><br></pre></td></tr></table></figure>
+
+<p>3、使用路由模块来实现页面跳转的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">方式1：直接修改地址栏</span><br><span class="line">方式2：js</span><br><span class="line">this.$router.push(‘路由地址’);</span><br><span class="line">方式3：</span><br><span class="line"> &lt;router-link </span><br><span class="line"> to=&quot;路由地址&quot;&gt;&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+
+<p>4、完成参数的传递</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">在页面之间跳转的时候，在有些场景下，需要同时指定参数</span><br><span class="line"></span><br><span class="line">1.明确发送方和接收方</span><br><span class="line">list --20--&gt; detail</span><br><span class="line">1.配置接收方的路由地址</span><br><span class="line">/detail --》 /detail/:index</span><br><span class="line"></span><br><span class="line">this.$route.params.index</span><br><span class="line">2.发送</span><br><span class="line">routerLink to=&quot;/detail/20&quot;</span><br><span class="line">this.$router.push(&apos;/detail/20&apos;)</span><br></pre></td></tr></table></figure>
+
+<p>5、路由嵌套</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">在一个路由中，path对应一个component，如果这个component需要根据</span><br><span class="line">不同的url再加载其他的component，称之为路由的嵌套</span><br><span class="line"></span><br><span class="line">举例：比如A组件现在需要根据不同的url，加载B组件或者C组件</span><br><span class="line">1.给A组件指定一个容器</span><br><span class="line">  &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">2.配置路由词典</span><br><span class="line">  &#123;</span><br><span class="line">    path:&apos;/a&apos;,</span><br><span class="line">    component:A,</span><br><span class="line">    children:[</span><br><span class="line">      &#123;path:&apos;/b&apos;,component:B&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  需求：现在有两个组件，分别是login/mail,建立SPA。</span><br><span class="line">  在此基础上，希望mail组件 嵌套inbox/outbox/draft</span><br><span class="line"></span><br><span class="line">  补充：在设置子路由，路由匹配规则依然是适用的，</span><br><span class="line">  只不过路由地址为空和异常，要携带父组件的路由地址</span><br><span class="line">  /mail /mail/draft</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-搭建基于CLI开发环境的方式"><a href="#13-搭建基于CLI开发环境的方式" class="headerlink" title="13.搭建基于CLI开发环境的方式"></a>13.搭建基于CLI开发环境的方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.指定一个文件夹</span><br><span class="line">C:\xampp\htdocs\framework\vue\project</span><br><span class="line">2.将tpls.zip拷贝到project中 </span><br><span class="line">3.右键单击压缩包，解压缩到当前文件夹</span><br><span class="line">4.进入到tpls</span><br><span class="line">5.同时按下shift和鼠标右键，选择在此位置打开命令行串口</span><br><span class="line">6.执行npm install</span><br><span class="line">7.执行npm start</span><br></pre></td></tr></table></figure>
+
+<h2 id="14-axios"><a href="#14-axios" class="headerlink" title="14.axios"></a>14.axios</h2><p>1.axios的get方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export const getAjax= function (getUrl,getAjaxData) &#123;</span><br><span class="line">  return axios.get(getUrl, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">      &apos;getAjaxDataObj1&apos;: getAjaxData.obj1,//obj1为getAjaxData的一个属性</span><br><span class="line">      &apos;getAjaxDataObj2&apos;: getAjaxData.obj2</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.axios的post方法</p>
+<p>export const postAjax= function (getUrl,postAjaxData) {<br>return axios.get(postUrl, {</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;postAjaxDataObj1&apos;: postAjaxData.obj1,//obj1为postAjaxData的一个属性</span><br><span class="line">&apos;postAjaxDataObj2&apos;: postAjaxData.obj2</span><br></pre></td></tr></table></figure>
+
+<p>})<br>}</p>
+<p>3.axios的拦截器<br>主要分为请求和响应两种拦截器,请求拦截一般就是配置对应的请求头信息(适用与常见请求方法,虽然ajax的get方法没有请求头,但是axios里面进行啦封装),响应一般就是对reponse进行拦截处理,如果返回结果为[]可以转化为0</p>
+<p>1.请求拦截:将当前城市信息放入请求头中</p>
+<p>axios.interceptors.request.use(config =&gt; {<br>config.headers.cityCode = window.sessionStorage.cityCode //jsCookie.get(‘cityCode’)<br>return config<br>},</p>
+<p>2.响应拦截:处理reponse的结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">axios.interceptors.response.use((response) =&gt;&#123;</span><br><span class="line">  let data = response.data</span><br><span class="line">  if(response.request.responseType === &apos;arraybuffer&apos;&amp;&amp;!data.length)&#123;</span><br><span class="line">    reponse.date=0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
